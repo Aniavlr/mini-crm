@@ -1,12 +1,25 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "./components/Layout";
+import ClientsList from "./pages/ClientsList";
+import ClientDetail from "./pages/ClientDetail";
+import ClientNew from "./pages/ClientNew";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Tailwind CSS работает! 🚀
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="clients">
+            <Route index element={<ClientsList />} />
+            <Route path="new" element={<ClientNew />} />
+            <Route path=":id" element={<ClientDetail />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
