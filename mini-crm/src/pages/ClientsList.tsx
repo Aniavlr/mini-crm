@@ -1,5 +1,11 @@
+import ClientList from "../components/ClientList";
+
 const ClientsList = () => {
-  return <></>;
+  return (
+    <>
+      <ClientList />
+    </>
+  );
 };
 
 export default ClientsList;
