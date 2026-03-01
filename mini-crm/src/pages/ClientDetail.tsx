@@ -1,5 +1,11 @@
+import ClientCard from "../components/ClientCard";
+
 const ClientDetail = () => {
-  return <></>;
+  return (
+    <>
+      <ClientCard />
+    </>
+  );
 };
 
 export default ClientDetail;
