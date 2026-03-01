@@ -67,7 +67,6 @@ const ClientCard = () => {
     },
   ];
 
-  // Находим клиента по ID из URL
   const client = clients.find((c) => c.id === Number(id));
 
   const getStatusConfig = (status: ClientStatus) => {
@@ -107,7 +106,6 @@ const ClientCard = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      {/* Header with back button */}
       <div className="mb-6">
         <Link
           to="/clients"
@@ -119,34 +117,33 @@ const ClientCard = () => {
       </div>
 
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-
         <div className="h-32 bg-gradient-to-r from-blue-500 to-blue-600"></div>
 
-        <div className="px-8 pb-6">
-          <div className="flex flex-col sm:flex-row sm:items-end -mt-12 mb-6">
-            <div className="flex items-end gap-4">
-              <div className="w-24 h-24 rounded-full bg-white p-1 shadow-lg">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-3xl font-semibold">
+        <div className="relative px-6 sm:px-8 pb-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4 sm:gap-6 -mt-16 sm:-mt-20 mb-6">
+            <div className="shrink-0">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white p-1.5 shadow-xl ring-1 ring-gray-200/70">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-4xl sm:text-5xl font-bold">
                   {client.name.charAt(0)}
                 </div>
               </div>
-              <div className="mb-2">
-                <h1 className="text-2xl font-bold text-gray-900">
-                  {client.name}
-                </h1>
-                <div className="flex items-center gap-3 mt-1">
-                  <span
-                    className={`inline-flex items-center rounded-md px-2.5 py-0.5 text-sm font-medium ring-1 ${status.className}`}
-                  >
-                    {status.label}
-                  </span>
-                </div>
+            </div>
+
+            <div className="pt-2 sm:pt-0">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                {client.name}
+              </h1>
+              <div className="mt-1.5 flex items-center gap-3 flex-wrap">
+                <span
+                  className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium ${status.className}`}
+                >
+                  {status.label}
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-       
         <div className="border-t border-gray-200">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-8">
             <div className="bg-white rounded-lg border border-gray-200 p-6">
@@ -155,20 +152,36 @@ const ClientCard = () => {
               </h3>
               <dl>
                 <div className="flex py-2 border-b border-gray-100">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Email</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.email}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Email
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.email}
+                  </dd>
                 </div>
                 <div className="flex py-2 border-b border-gray-100">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Phone</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.phone || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Phone
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.phone || "—"}
+                  </dd>
                 </div>
                 <div className="flex py-2 border-b border-gray-100">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Company</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.company || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Company
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.company || "—"}
+                  </dd>
                 </div>
                 <div className="flex py-2 border-b border-gray-100 last:border-0">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Address</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.address || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Address
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.address || "—"}
+                  </dd>
                 </div>
               </dl>
             </div>
@@ -179,26 +192,44 @@ const ClientCard = () => {
               </h3>
               <dl>
                 <div className="flex py-2 border-b border-gray-100">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Registration Date</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.registrationDate || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Registration Date
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.registrationDate || "—"}
+                  </dd>
                 </div>
                 <div className="flex py-2 border-b border-gray-100">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Last Activity</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.lastActivity || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Last Activity
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.lastActivity || "—"}
+                  </dd>
                 </div>
                 <div className="flex py-2 border-b border-gray-100">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Total Orders</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.totalOrders || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Total Orders
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.totalOrders || "—"}
+                  </dd>
                 </div>
                 <div className="flex py-2 border-b border-gray-100 last:border-0">
-                  <dt className="w-1/3 text-sm font-medium text-gray-500">Total Spent</dt>
-                  <dd className="w-2/3 text-sm text-gray-900">{client.totalSpent || "—"}</dd>
+                  <dt className="w-1/3 text-sm font-medium text-gray-500">
+                    Total Spent
+                  </dt>
+                  <dd className="w-2/3 text-sm text-gray-900">
+                    {client.totalSpent || "—"}
+                  </dd>
                 </div>
               </dl>
             </div>
 
             <div className="lg:col-span-2 bg-white rounded-lg border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Notes</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                Notes
+              </h3>
               <p className="text-sm text-gray-700 leading-relaxed">
                 {client.notes || "No notes available"}
               </p>
