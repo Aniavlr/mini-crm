@@ -1,5 +1,11 @@
+import AddClient from "../components/AddClient";
+
 const ClientNew = () => {
-  return <></>;
+  return (
+    <>
+      <AddClient />
+    </>
+  );
 };
 
 export default ClientNew;
