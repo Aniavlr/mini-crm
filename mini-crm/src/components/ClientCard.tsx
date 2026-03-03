@@ -80,7 +80,7 @@ const ClientCard = () => {
         className: "bg-yellow-400/10 text-yellow-500 ring-1 ring-yellow-400/20",
       },
       archived: {
-        label: "In the archive",
+        label: "Archived",
         className: "bg-gray-400/10 text-gray-400 ring-1 ring-gray-400/20",
       },
     };

@@ -47,7 +47,7 @@ const ClientList = () => {
         className: "bg-yellow-400/10 text-yellow-500 ring-1 ring-yellow-400/20",
       },
       archived: {
-        label: "In the archive",
+        label: "Archived",
         className: "bg-gray-400/10 text-gray-400 ring-1 ring-gray-400/20",
       },
     };
@@ -125,7 +125,7 @@ const ClientList = () => {
                   <div className="flex justify-end gap-2">
                     <Link
                       to={`/clients/${client.id}`}
-                      className="inline-flex items-center px-3 py-2 bg-sky-500/75 hover:bg-sky-600 text-white text-sm font-medium rounded-md transition-colors duration-150"
+                      className="inline-flex items-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium rounded-md transition-colors duration-150"
                     >
                       More details
                     </Link>
@@ -148,7 +148,11 @@ const ClientList = () => {
         <div className="text-center py-8 text-gray-500">No clients found</div>
       )}
 
-      <Dialog open={isOpen} onClose={() => {}} className="relative z-10 focus:outline-none">
+      <Dialog
+        open={isOpen}
+        onClose={() => {}}
+        className="relative z-10 focus:outline-none"
+      >
         <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
